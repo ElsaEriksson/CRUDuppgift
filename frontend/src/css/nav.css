@@ -1,0 +1,17 @@
+.container--nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.navbar-brand {
+  text-decoration: none;
+}
