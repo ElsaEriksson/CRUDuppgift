@@ -1,8 +1,10 @@
 <?php
-require_once ("public/utils/UrlModifier.php");
-require_once ("public/pages/layout/head.php");
-require_once ("public/pages/layout/nav.php");
-require_once ("public/pages/layout/bootstrapScripts.php");
+require_once (__DIR__ . "/../utils/UrlModifier.php");
+require_once (__DIR__ . "/layout/head.php");
+require_once (__DIR__ . "/layout/nav.php");
+require_once (__DIR__ . "/layout/bootstrapScripts.php");
+require_once (__DIR__ . "/../models/Product.php");
+require_once (__DIR__ . "/../functions/showProducts.php");
 
 $urlModifier = new UrlModifier();
 
@@ -18,10 +20,10 @@ layout_head("Elsas Bank");
     layout_nav();
     ?>
 
-    <!-- Section-->
-    <section class="py-5">
-        <p>Tjo</p>
-    </section>
+    <!-- Main-->
+    <main>
+        hej
+    </main>
 
     <!-- Scripts-->
     <?php

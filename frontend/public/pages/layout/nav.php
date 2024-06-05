@@ -5,8 +5,9 @@ function layout_nav()
     ?>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        <a class="navbar-brand" href="/">CockTails</a>
+        <a class="navbar-login" href="/drinkMaster">Drink Master</a>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -19,7 +20,7 @@ function layout_nav()
                     <a class="nav-link" href="/createProduct">Create Product</a>
                 </li>
             </ul>
-        </div>
+        </div> -->
     </nav>
 
     <?php

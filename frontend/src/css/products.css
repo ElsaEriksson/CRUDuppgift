@@ -1,0 +1,53 @@
+.container--image {
+  text-align: center;
+  max-width: 100%;
+}
+
+.container--image img {
+  height: auto;
+  max-height: 100%;
+  width: 100%;
+}
+
+.cocktailCard {
+  padding: 2rem;
+}
+
+.cocktailName {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.container--Editlink {
+  margin-top: 2rem;
+}
+
+.editLink {
+  color: black;
+  padding: 0.8rem;
+  border-radius: 100%;
+  border: 1px solid black;
+}
+
+.editLink:hover {
+  color: black;
+  text-decoration: none;
+  background-color: #ccc9c6;
+  cursor: pointer;
+}
+
+main {
+  @media screen and (min-width: 600px) {
+    .container--cocktailCards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .container--cocktailCards {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}

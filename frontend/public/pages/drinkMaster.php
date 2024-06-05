@@ -1,9 +1,8 @@
 <?php
-require_once (__DIR__ . "/../utils/UrlModifier.php");
-require_once (__DIR__ . "/layout/head.php");
-require_once (__DIR__ . "/layout/nav.php");
-require_once (__DIR__ . "/layout/bootstrapScripts.php");
-require_once (__DIR__ . "/../models/Product.php");
+require_once ("public/utils/UrlModifier.php");
+require_once ("public/pages/layout/head.php");
+require_once ("public/pages/layout/nav.php");
+require_once ("public/pages/layout/bootstrapScripts.php");
 require_once (__DIR__ . "/../functions/getProducts.php");
 
 $urlModifier = new UrlModifier();

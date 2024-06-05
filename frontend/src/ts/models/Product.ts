@@ -1,4 +1,3 @@
-"use strict";
 // export class Product {
 //   constructor(
 //     public _id: string,

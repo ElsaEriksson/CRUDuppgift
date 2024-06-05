@@ -7,6 +7,10 @@ $router->addRoute('/', function () {
     require __DIR__ . '/public/pages/products.php';
 });
 
+$router->addRoute('/drinkMaster', function () {
+    require __DIR__ . '/public/pages/drinkMaster.php';
+});
+
 $router->addRoute('/editProduct', function () {
     require __DIR__ . '/public/pages/editProduct.php';
 });
