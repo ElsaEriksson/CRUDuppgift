@@ -1,7 +1,10 @@
 <?php
+require_once (__DIR__ . "/viewOneProduct.php");
+
 function functions_showProducts($products)
 {
     $isdrinkMasterPage = strpos($_SERVER['REQUEST_URI'], '/drinkMaster') !== false;
+
     ?>
     <div class="container--cocktailCards">
         <?php

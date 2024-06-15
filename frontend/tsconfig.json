@@ -6,5 +6,5 @@
     "strict": true
   },
   "include": [
-    "src/**/*.ts", "src/ts/main.ts" ],
+    "public/**/*.ts", "main.ts" ],
 }

@@ -3,6 +3,8 @@ require_once ("public/utils/UrlModifier.php");
 require_once ("public/pages/layout/head.php");
 require_once ("public/pages/layout/nav.php");
 require_once ("public/pages/layout/bootstrapScripts.php");
+require_once ("public/functions/createProductForm.php");
+
 
 $urlModifier = new UrlModifier();
 
@@ -18,10 +20,12 @@ layout_head("Elsas Bank");
     layout_nav();
     ?>
 
-    <!-- Section-->
-    <section class="py-5">
-        <p>hellu</p>
-    </section>
+    <!-- Main-->
+    <main>
+        <?php
+        functions_createProductForm();
+        ?>
+    </main>
 
     <!-- Scripts-->
     <?php

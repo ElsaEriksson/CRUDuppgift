@@ -34,5 +34,5 @@ if (is_array($data)) {
 function functions_getProducts($products)
 {
     functions_showProducts($products);
+    functions_viewOneProduct($products);
 }
-?>

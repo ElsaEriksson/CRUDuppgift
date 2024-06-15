@@ -3,8 +3,9 @@ require_once (__DIR__ . "/../utils/UrlModifier.php");
 require_once (__DIR__ . "/layout/head.php");
 require_once (__DIR__ . "/layout/nav.php");
 require_once (__DIR__ . "/layout/bootstrapScripts.php");
-require_once (__DIR__ . "/../models/Product.php");
 require_once (__DIR__ . "/../functions/getProducts.php");
+require_once (__DIR__ . "/../functions/showProducts.php");
+
 
 $urlModifier = new UrlModifier();
 
@@ -23,7 +24,7 @@ layout_head("Elsas Bank");
     <!-- Main-->
     <main>
         <?php
-        functions_getProducts($products);
+        functions_showProducts($products);
         ?>
     </main>
 

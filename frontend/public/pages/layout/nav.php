@@ -2,25 +2,18 @@
 
 function layout_nav()
 {
+    $isdrinkMasterPage = strpos($_SERVER['REQUEST_URI'], '/drinkMaster') !== false;
+
     ?>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/">CockTails</a>
+        <?php
+        if ($isdrinkMasterPage) {
+            echo "<a class='navbar-login' href='/createProduct'><h2>+</h2></a>";
+        }
+        ?>
         <a class="navbar-login" href="/drinkMaster">Drink Master</a>
-        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Products <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/createProduct">Create Product</a>
-                </li>
-            </ul>
-        </div> -->
     </nav>
 
     <?php
