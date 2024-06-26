@@ -11,7 +11,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:8000",
+    origin: "https://cru-duppgift.vercel.app/",
     methods: "*",
   })
 );
