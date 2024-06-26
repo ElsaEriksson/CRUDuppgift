@@ -1,7 +1,7 @@
 <?php
+session_start();
 function layout_head(string $title)
 {
-    session_start();
     ?>
     <!DOCTYPE html>
     <html lang="en">

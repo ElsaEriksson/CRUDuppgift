@@ -1,5 +1,8 @@
 import express, { Request, Response } from "express";
 import { productModel } from "../models/Product";
+import { Parser } from "json2csv";
+import fs from "fs";
+import path from "path";
 
 export const productsRouter = express.Router();
 
@@ -29,13 +32,11 @@ productsRouter.post("/", async (req: Request, res: Response) => {
       product: savedProduct,
     });
   } catch (error) {
-    res
-      .status(400)
-      .json({
-        success: false,
-        message: "An error occurred.",
-        error: (error as any).message,
-      });
+    res.status(400).json({
+      success: false,
+      message: "An error occurred.",
+      error: (error as any).message,
+    });
   }
 });
 
@@ -68,5 +69,32 @@ productsRouter.delete("/:id", async (req: Request, res: Response) => {
     res.status(200).json();
   } catch (error) {
     res.status(400).json(error);
+  }
+});
+
+productsRouter.get("/export/csv", async (req: Request, res: Response) => {
+  try {
+    const products = await productModel.find();
+
+    const fields = ["title", "description", "price", "img"];
+    const opts = { fields };
+    const parser = new Parser(opts);
+    const csv = parser.parse(products);
+
+    const filePath = path.join(__dirname, "products.csv");
+    fs.writeFileSync(filePath, csv);
+
+    res.download(filePath, "products.csv", (err) => {
+      if (err) {
+        console.error("Error downloading the file:", err);
+      }
+      fs.unlinkSync(filePath); // Ta bort filen efter nedladdning
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: "An error occurred while exporting data.",
+      error: (err as any).message,
+    });
   }
 });

@@ -9,12 +9,7 @@ const PORT = process.env.PORT;
 
 const app = express();
 
-app.use(
-  cors({
-    origin: "https://cru-duppgift.vercel.app/",
-    methods: "*",
-  })
-);
+app.use(cors());
 
 app.use(json());
 

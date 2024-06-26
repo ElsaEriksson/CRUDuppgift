@@ -15,15 +15,4 @@ class Product
         $this->price = $price;
         $this->img = $img;
     }
-
-    public static function fromArray($array)
-    {
-        return new self(
-            $array['_id'] ?? null,
-            $array['title'] ?? '',
-            $array['description'] ?? '',
-            $array['price'] ?? 0,
-            $array['img'] ?? ''
-        );
-    }
 }
