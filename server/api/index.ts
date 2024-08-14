@@ -3,6 +3,7 @@ import express, { json } from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import { productsRouter } from "../routes/products";
+import { productModel } from "../models/Product";
 
 dotenv.config();
 const PORT = process.env.PORT;
@@ -28,8 +29,10 @@ database.on("connected", () => {
   console.log("Connected to the database, we are alive and up and running!");
 });
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
+app.get("/", async (req, res) => {
+  const products = await productModel.find();
+  res.status(200).json(products);
+  // res.send("Hello World");
 });
 
 app.use("/products", productsRouter);

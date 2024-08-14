@@ -1,30 +1,39 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $id = $_POST['id'];
-    $response = functions_deleteProduct($id);
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+    $price = $_POST['price'];
+    $img = $_POST['img'];
+
+    $response = services_postNewProduct($title, $description, $price, $img);
     echo $response;
 }
 
-function functions_deleteProduct($id)
+function services_postNewProduct($title, $description, $price, $img)
 {
-    $url = "http://localhost:3000/products/$id";
+    $url = "http://localhost:3000/products/";
 
     $putData = json_encode(
         array(
-            'id' => $id,
+            'title' => $title,
+            'description' => $description,
+            'price' => $price,
+            'img' => $img
         )
     );
 
     $ch = curl_init($url);
 
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+    curl_setopt($ch, CURLOPT_POST, true);
 
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 
     curl_setopt($ch, CURLOPT_POSTFIELDS, $putData);
 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    curl_setopt($ch, CURLOPT_TIMEOUT, 30); // Timeout after 30 seconds
 
     $response = curl_exec($ch);
 

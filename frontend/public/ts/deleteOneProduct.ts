@@ -3,7 +3,7 @@ function deleteOneProduct(productId: string) {
     const data = new FormData();
     data.append("id", productId);
 
-    fetch("/public/functions/deleteProduct.php", {
+    fetch("/public/services/deleteProduct.php", {
       method: "POST",
       body: data,
     })

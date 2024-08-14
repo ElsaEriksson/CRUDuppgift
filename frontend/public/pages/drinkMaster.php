@@ -3,7 +3,7 @@ require_once ("public/utils/UrlModifier.php");
 require_once ("public/pages/layout/head.php");
 require_once ("public/pages/layout/nav.php");
 require_once ("public/pages/layout/bootstrapScripts.php");
-require_once (__DIR__ . "/../functions/getProducts.php");
+require_once (__DIR__ . "/../services/getProducts.php");
 
 $urlModifier = new UrlModifier();
 

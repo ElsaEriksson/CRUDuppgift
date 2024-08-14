@@ -1,39 +1,36 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $id = $_POST['id'];
     $title = $_POST['title'];
     $description = $_POST['description'];
     $price = $_POST['price'];
-    $img = $_POST['img'];
 
-    $response = functions_postNewProduct($title, $description, $price, $img);
+    $response = services_putEditProduct($id, $title, $description, $price);
     echo $response;
 }
 
-function functions_postNewProduct($title, $description, $price, $img)
+function services_putEditProduct($id, $title, $description, $price)
 {
-    $url = "http://localhost:3000/products/";
+    $url = "http://localhost:3000/products/$id";
 
     $putData = json_encode(
         array(
             'title' => $title,
             'description' => $description,
             'price' => $price,
-            'img' => $img
         )
     );
 
     $ch = curl_init($url);
 
-    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
 
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 
     curl_setopt($ch, CURLOPT_POSTFIELDS, $putData);
 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-    curl_setopt($ch, CURLOPT_TIMEOUT, 30); // Timeout after 30 seconds
 
     $response = curl_exec($ch);
 

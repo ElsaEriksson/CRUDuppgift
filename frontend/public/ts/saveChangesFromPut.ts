@@ -19,7 +19,7 @@ function saveChangesFromPut(productId: string) {
   data.append("description", editDescriptionValue);
   data.append("price", editPriceValue);
 
-  fetch("/public/functions/putEditProduct.php", {
+  fetch("/public/services/putEditProduct.php", {
     method: "POST",
     body: data,
   })

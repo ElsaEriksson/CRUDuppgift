@@ -2,29 +2,23 @@
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'];
-    $title = $_POST['title'];
-    $description = $_POST['description'];
-    $price = $_POST['price'];
-
-    $response = functions_putEditProduct($id, $title, $description, $price);
+    $response = services_deleteProduct($id);
     echo $response;
 }
 
-function functions_putEditProduct($id, $title, $description, $price)
+function services_deleteProduct($id)
 {
     $url = "http://localhost:3000/products/$id";
 
     $putData = json_encode(
         array(
-            'title' => $title,
-            'description' => $description,
-            'price' => $price,
+            'id' => $id,
         )
     );
 
     $ch = curl_init($url);
 
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
 
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 

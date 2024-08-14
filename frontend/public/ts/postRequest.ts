@@ -23,7 +23,7 @@ function postRequest() {
   data.append("price", inputPriceValue);
   data.append("img", inputImageValue);
 
-  fetch("/public/functions/postNewProduct.php", {
+  fetch("/public/services/postNewProduct.php", {
     method: "POST",
     body: data,
   })
