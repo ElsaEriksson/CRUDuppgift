@@ -1,5 +1,5 @@
 <?php
-require_once (dirname(__FILE__) . "/public/utils/Router.php");
+require_once(dirname(__FILE__) . "/public/utils/Router.php");
 
 $router = new Router();
 

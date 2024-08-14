@@ -1,6 +1,6 @@
 <?php
-require_once (__DIR__ . "/../models/Product.php");
-require_once (__DIR__ . "/../functions/showProducts.php");
+require_once(__DIR__ . "/../models/Product.php");
+require_once(__DIR__ . "/../functions/showProducts.php");
 
 $url = "http://localhost:3000/products";
 
