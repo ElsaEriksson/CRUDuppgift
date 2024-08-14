@@ -30,8 +30,6 @@ database.on("connected", () => {
 });
 
 app.get("/", async (req, res) => {
-  const products = await productModel.find();
-  res.status(200).json(products);
   res.send("Hello World");
 });
 
