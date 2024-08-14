@@ -29,7 +29,9 @@ database.on("connected", () => {
   console.log("Connected to the database, we are alive and up and running!");
 });
 
-app.get("/products", (req, res) => {
+app.get("/", async (req, res) => {
+  const products = await productModel.find();
+  res.status(200).json(products);
   res.send("Hello World");
 });
 
