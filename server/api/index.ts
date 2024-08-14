@@ -31,7 +31,14 @@ database.on("connected", () => {
 
 app.get("/", (req, res) => {
   // res.send("Hello World");
-  res.redirect("/products");
+  try {
+    res.redirect("/products");
+  } catch (error) {
+    res.status(400).json({
+      message: "An error occurred.",
+      error: (error as any).message,
+    });
+  }
 });
 
 app.use("/products", productsRouter);
