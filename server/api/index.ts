@@ -29,8 +29,9 @@ database.on("connected", () => {
   console.log("Connected to the database, we are alive and up and running!");
 });
 
-app.get("/", async (req, res) => {
-  res.send("Hello World");
+app.get("/", (req, res) => {
+  // res.send("Hello World");
+  res.redirect("/products");
 });
 
 app.use("/products", productsRouter);
