@@ -33,7 +33,7 @@ function services_postNewProduct($title, $description, $price, $img)
 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-    curl_setopt($ch, CURLOPT_TIMEOUT, 30); // Timeout after 30 seconds
+    curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 
     $response = curl_exec($ch);
 

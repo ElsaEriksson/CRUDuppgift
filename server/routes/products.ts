@@ -88,7 +88,7 @@ productsRouter.get("/export/csv", async (req: Request, res: Response) => {
       if (err) {
         console.error("Error downloading the file:", err);
       }
-      fs.unlinkSync(filePath); // Ta bort filen efter nedladdning
+      fs.unlinkSync(filePath);
     });
   } catch (err) {
     res.status(500).json({

@@ -3,7 +3,6 @@ import express, { json } from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import { productsRouter } from "../routes/products";
-import { productModel } from "../models/Product";
 
 dotenv.config();
 const PORT = process.env.PORT;
@@ -30,7 +29,6 @@ database.on("connected", () => {
 });
 
 app.get("/", (req, res) => {
-  // res.send("Hello World");
   try {
     res.redirect("/products");
   } catch (error) {
